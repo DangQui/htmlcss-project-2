@@ -583,10 +583,12 @@ a {
     display: flex;
     gap: 30px;
     margin-top: 55px;
+    overflow: hidden;
 }
 
 .blog .blog-list .item {
-    width: 33.33%;
+    flex-shrink: 0;
+    width: calc(33.33% - 20px);
     background: #fff;
     border-radius: 16px;
 }
@@ -649,10 +651,31 @@ a {
 
 .blog .item .cta-btn {
     margin-top: 12px;
+    font-size: 1.4rem;
 }
 
 .blog .item .cta-btn:hover {
     color: #fff;
     background: var(--primary-color);
     cursor: pointer;
+}
+
+.blog .dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 38px;
+}
+
+.blog .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5f5b53;
+    cursor: pointer;
+}
+
+.blog .dot.active {
+    cursor: default;
+    background: var(--primary-color);
 }
